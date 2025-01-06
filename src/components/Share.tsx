@@ -17,6 +17,8 @@ const Share = () => {
   sensitive:false,
  });
 
+ console.log(media);
+
  const handleMediaChange = (e: React.ChangeEvent<HTMLInputElement>)=>{
     if( e.target.files && e.target.files[0]){
       setMedia(e.target.files[0]);
@@ -44,7 +46,7 @@ const Share = () => {
          className="bg-transparent outline-none placeholder:text-textGray text-xl" 
         />
         {/* PREVIEW IMAGE */}
-        { previewURL && (
+        {media?.type.includes("image") && previewURL && (
            <div className="relative rounded-xl overflow-hidden">
             <NextImage src={previewURL} alt="" width={600} height={600}
               className={`w-full ${
@@ -61,7 +63,10 @@ const Share = () => {
               Edit
             </div>
           </div>
-        )}
+        )},
+        {
+          media?.type.includes{"video"} |
+        }
         {isEditorOpen && previewURL &&( 
            <ImageEditor 
               onClose={() => setIsEditorOpen(false)}
@@ -73,7 +78,7 @@ const Share = () => {
 
         <div className="flex items-center justify-between gap-4 flex-wrap">
           <div className="flex gap-4 flex-wrap">
-            <input type="file" onChange={handleMediaChange} className="hidden" id="file" name="file" />
+            <input type="file" onChange={handleMediaChange} className="hidden" id="file" name="file" accept="images/*, video/*" />
             <label htmlFor="file">
                <Image path="public/icons/image.svg" alt="" w={20} h={20} className="cursor-pointer"/>
             </label>
