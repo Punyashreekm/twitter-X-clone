@@ -62,11 +62,26 @@ const Share = () => {
             >
               Edit
             </div>
+            <div
+               className="absolute top-2 right-2 bg-black bg-opacity-50 text-white h-8  w-8  flex items-center justify-center rounded-full font-bold text-sm cursor-pointer"
+               onClick={ () =>setMedia(null)}
+              >
+                X
+              </div>
           </div>
-        )},
-        {
-          media?.type.includes{"video"} |
-        }
+        )}{
+            media?.type.includes("video") && previewURL && (
+             <div className="relative">
+              <video src={previewURL} controls/>
+              <div
+               className="absolute top-2 right-2 bg-black bg-opacity-50 text-white h-8  w-8  flex items-center justify-center rounded-full font-bold text-sm cursor-pointer"
+               onClick={ () =>setMedia(null)}
+              >
+                X
+              </div>
+             </div>
+            )
+           }
         {isEditorOpen && previewURL &&( 
            <ImageEditor 
               onClose={() => setIsEditorOpen(false)}

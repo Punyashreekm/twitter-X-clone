@@ -1,5 +1,5 @@
 "use server";
-import ImageKit from "imagekit";
+import {imagekit} from "./Utils";
 
 
 
@@ -18,20 +18,22 @@ export const shareAction = async (
     }`
 
     imagekit.upload(
-        {
+       {
         file: buffer,
         fileName: file.name,
         folder: "/posts",
-        transformation:{
-        pre:transformation,
-        },
+        ...(file.type.includes("image") && { 
+          transformation:{
+            pre:transformation,
+          },
+        }) ,
         customMetadata: {
             sensitive: settings.sensitive,
         },
-    },
-    function(error, result) {
+       },
+       function(error, result) {
         if(error) console.log(error);
         else console.log(result);
-    }
-)
+       }
+    );
 };

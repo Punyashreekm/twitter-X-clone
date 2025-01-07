@@ -18,9 +18,10 @@ const Image = ({path, w, h, alt, className, tr} : ImageType) => {
     urlEndpoint={urlEndpoint}
     path={path}
     {...(tr
-       ?{transformation: [{ width: `s{w}`, height:`${h}` }]}
+       ?{transformation: [{ width: `${w}`, height:`${h}` }]}
        :{width:w, height:h}
     )}
+    lqip={{ active:true, quality:20}}
     alt={alt}
     className={className}
    />
@@ -28,4 +29,4 @@ const Image = ({path, w, h, alt, className, tr} : ImageType) => {
 
 };
 
-export default Image
+export default Image;
