@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "@/components/Image";
+import Feed from "@/components/Feed";
 
 const UserPage = () => {
     return(
@@ -29,13 +30,47 @@ const UserPage = () => {
                     <Image path="public/icons/more.svg" alt="more" w={20} h={20} />
                 </div>
                 <div className=" w-9 h-9 flex items-center justify-center rounded-full border-[1px] border-gray-500 cursor-pointer">
-                    <Image path="public/icons/more.svg" alt="more" w={20} h={20} />
+                    <Image path="public/icons/explore.svg" alt="more" w={20} h={20} />
                 </div>
                 <div className=" w-9 h-9 flex items-center justify-center rounded-full border-[1px] border-gray-500 cursor-pointer">
-                    <Image path="public/icons/more.svg" alt="more" w={20} h={20} />
+                    <Image path="public/icons/message.svg" alt="more" w={20} h={20} />
                 </div>
+                <button className="py-2 px-4 bg-white text-black font-bold rounded-full">Follow</button>
+             </div>
+             {/* USER DETAILS */}
+             <div className="p-4 flex flex-col gap-2">
+                {/* USERNAME & HANDLE */}
+                <div className=" ">
+                   <h1 className="text-2xl font-bold">Lama Dev</h1>
+                   <span className="text-sm text-textGray">@lamaWebDev</span>
+                </div>
+                <p>Lama Dev Youtube Channel</p>
+                {/* JOB & LOCATION & DATE */}
+                <div className="flex gap-4 text-textGray text-[15px]">
+                    <div className="flex items-center gap-2">
+                       <Image path="public/icons/userLocation.svg" alt="location" w={20} h={20}/>
+                       <span>USA</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                       <Image path="public/icons/date.svg" alt="date" w={20} h={20}/>
+                       <span>Joined May 2021</span>
+                    </div>
+                </div>
+             {/* FOLLOWINGS AND FOLLOWERS */}
+             <div className="flex gap-4">
+               <div className="flex items-center gap-4">
+                  <span className="font-bold">100</span>
+                  <span className="text-textGray text-[15px]">Followers</span>
+               </div>
+               <div className="flex items-center gap-4">
+                  <span className="font-bold">100</span>
+                  <span className="text-textGray text-[15px]">Followings</span>
+               </div>
+             </div>
              </div>
            </div>
+           {/* FEED */}
+           <Feed/>
         </div>
     )
 }
