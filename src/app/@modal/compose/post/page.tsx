@@ -1,26 +1,46 @@
 "use client";
+
 import Image from "@/components/Image";
+import { useRouter } from "next/navigation";
 
 const PostModal = () => {
+  const router = useRouter();
+
+  const closeModal = () => {
+    router.back();
+  };
   return (
     <div className="absolute w-full h-screen top-0 left-0  z-20 bg-[#293139a6] flex justify-center ">
       <div className="py-4 px-8 rounded-xl bg-black w-[600px] h-max mt-12">
         {/* TOP */}
-        <div className="">
-          <div className="">X</div>
-          <div className="">Drafts</div>
+        <div className=" flex items-center justify-between">
+          <div className=" cursor-pointer" onClick={closeModal}>
+            X
+          </div>
+          <div className=" font-bold text-iconBlue">Drafts</div>
         </div>
         {/* CENTER */}
-        <div className="">
+        <div className="py-8 flex gap-4">
           <div className="relative w-10 h-10 rounded-full overflow-hidden">
             <Image path="public/general/avatar.png " alt="Lama Dev" w={100} h={100} tr={true} />
           </div>
-          <input type="text" placeholder="What is Happening?! " />
+          <input
+            className="flex-1 bg-transparent outline-none text-lg"
+            type="text"
+            placeholder="What is Happening?! "
+          />
         </div>
         {/* BOTTOM */}
-        <div className="">
-          <div className=""></div>
-          <button>Post</button>
+        <div className=" flex items-center justify-between gap-4 flex-wrap border-t border-borderGray py-4">
+          <div className="flex gap-4 flex-wrap ">
+            <Image path="public/icons/image.svg" alt="" w={20} h={20} className="cursor-pointer" />
+            <Image path="public/icons/gif.svg" alt="" w={20} h={20} className="cursor-pointer" />
+            <Image path="public/icons/poll.svg" alt="" w={20} h={20} className="cursor-pointer" />
+            <Image path="public/icons/emoji.svg" alt="" w={20} h={20} className="cursor-pointer" />
+            <Image path="public/icons/schedule.svg" alt="" w={20} h={20} className="cursor-pointer" />
+            <Image path="public/icons/location.svg" alt="" w={20} h={20} className="cursor-pointer" />
+          </div>
+          <button className="py-2 px-5 text-black bg-white rounded-full font-bold">Post</button>
         </div>
       </div>
     </div>
