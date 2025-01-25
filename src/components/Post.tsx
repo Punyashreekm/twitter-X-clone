@@ -66,7 +66,7 @@ const Post = async ({ type }: { type?: "status" | "comment" }) => {
             <PostInfo />
           </div>
           {/* TEXT AND MEDIA */}
-          <Link href={`punyaWebDev/status/123`}>
+          <Link href={`/punyaWebDev/status/123`}>
             <p className={`${type === "status" && "text-lg"}`}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam a tempora, nisi dolor consectetur fugit
               perferendis reiciendis iusto consequatur alias dolore! Accusamus laboriosam consequuntur esse commodi, in
