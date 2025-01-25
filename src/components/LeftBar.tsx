@@ -105,8 +105,8 @@ const LeftBar = () => {
             <Image path="/public/general/avatar.png" alt="lama dev" w={100} h={100} tr={true} />
           </div>
           <div className="hidden xxl:flex flex-col">
-            <span className="font-bold">Lama Dev</span>
-            <span className="text-sm text-textGray">@lamaWebDev</span>
+            <span className="font-bold">Punya</span>
+            <span className="text-sm text-textGray">@PunyaWebDev</span>
           </div>
         </div>
         <div className="hidden xxl:block cursor-pointer font-bold">...</div>

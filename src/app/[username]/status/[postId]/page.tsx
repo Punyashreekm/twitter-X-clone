@@ -2,7 +2,12 @@ import Comments from "@/components/Comments";
 import Image from "@/components/Image";
 import Post from "@/components/Post";
 import Link from "next/link";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Punya(@PunyaWebDev)",
+  description: "...",
+};
 const StatusPage = () => {
   return (
     <div className="">
